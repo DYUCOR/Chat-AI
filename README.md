@@ -10,6 +10,8 @@ Descrição breve do que o projeto faz.
 - Java
 - Spring Boot
 - PostgreSQL
+- Docker
+- API Gemini
 
 ## Instalação
 
