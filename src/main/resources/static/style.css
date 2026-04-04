@@ -331,3 +331,36 @@ button:hover {
     border: 1px solid #ddd;
     padding: 6px 10px;
 }
+
+/* ===================== */
+/* LOGIN */
+/* ===================== */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input {
+    padding: 14px 20px;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color);
+}
+
+.google-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.google-btn img {
+    width: 16px;
+    height: 16px;
+}

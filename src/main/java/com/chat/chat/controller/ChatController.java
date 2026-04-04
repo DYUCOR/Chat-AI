@@ -2,7 +2,6 @@ package com.chat.chat.controller;
 
 
 import com.chat.chat.service.AiService;
-import com.chat.chat.service.ChatMessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -19,7 +18,6 @@ public class ChatController {
     public String sendMessage(String message) {
         return aiService.enviarMensagemIA(message);
     }
-
 
 
 }

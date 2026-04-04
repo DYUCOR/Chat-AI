@@ -1,3 +1,8 @@
+import {
+    GoogleAuthProvider,
+    signInWithPopup,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
 const messages = document.getElementById("messages")
 
 let stompClient = null
@@ -95,3 +100,56 @@ function removeTyping(){
     }
 
 }
+
+
+window.cadastrarComGoogle = async function () {
+    const provider = new GoogleAuthProvider();
+
+    try {
+        const result = await signInWithPopup(window.auth, provider);
+
+        const user = result.user;
+
+        console.log("Usuário:", user);
+
+        alert("Cadastro/Login com Google realizado!");
+
+        // opcional: redirecionar
+        window.location.href = "chat.html";
+
+    } catch (error) {
+        console.error(error);
+        alert("Erro: " + error.message);
+    }
+}
+
+function salvarUsuarioBanco(user) {
+
+    const usuarioDTO = {
+        nome: user.displayName,
+        email: user.email,
+        foto: user.photoURL,
+        uid: user.uid
+    };
+
+    fetch("http://localhost:8080/api/usuarios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(usuarioDTO)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao salvar usuário");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Usuário salvo:", data);
+        })
+        .catch(error => {
+            console.error("Erro:", error);
+        });
+}
+

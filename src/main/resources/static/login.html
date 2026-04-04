@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Butter Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🧈</div>
+
+    <h1>Login</h1>
+
+    <p>Entre para começar a conversar</p>
+
+    <div class="login-form">
+
+<!--        <input id="email" type="email" placeholder="Email" />-->
+<!--        <input id="password" type="password" placeholder="Senha" />-->
+
+<!--        <button onclick="login()">Entrar</button>-->
+
+<!--        <div class="divider">-->
+<!--            <span>ou</span>-->
+<!--        </div>-->
+
+        <button class="google-btn" onclick="cadastrarComGoogle()">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" />
+            Entrar com Google
+        </button>
+
+
+
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+        import { ENV } from "./env.js";
+
+
+
+
+        const firebaseConfig = {
+            apiKey: ENV.apiKey,
+            authDomain: ENV.authDomain,
+            projectId: ENV.projectId,
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.auth = auth;
+    </script>
+    <script type="module" src="script.js"></script>
+
+
+</body>
+</html>
