@@ -3,8 +3,15 @@
 Descrição breve do que o projeto faz.
 
 ## Funcionalidades
+ ### Parte 1
 - Conversa Com iA (INTEGRAÇÂO COM O GEMINI)
 - Salva Historico de mensagem no banco de dados
+
+ ### Parte 2
+ - Integração com firebase
+- Cadastro e login com a conta google
+- Salva usuario no banco postgres
+
 
 ## Tecnologias
 - Java
