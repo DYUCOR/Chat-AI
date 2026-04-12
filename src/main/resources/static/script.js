@@ -71,6 +71,7 @@ function addAiMessage(text) {
         </div>
     `;
     messages.appendChild(messageDiv);
+    window.sendMessage = sendMessage;
 }
 
 function startChat() {
@@ -113,6 +114,7 @@ window.cadastrarComGoogle = async function () {
         console.log("Usuário:", user);
 
         alert("Cadastro/Login com Google realizado!");
+        salvarUsuarioBanco(user)
 
         // opcional: redirecionar
         window.location.href = "chat.html";
@@ -126,13 +128,13 @@ window.cadastrarComGoogle = async function () {
 function salvarUsuarioBanco(user) {
 
     const usuarioDTO = {
-        nome: user.displayName,
+        username: user.displayName,
         email: user.email,
-        foto: user.photoURL,
+        photo: user.photoURL,
         uid: user.uid
     };
 
-    fetch("http://localhost:8080/api/usuarios", {
+    fetch("http://localhost:8080/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -18,6 +18,7 @@ public class SpringSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable) // desativa csrf (ok pra teste)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+                                "/user",
                                 "/login.html",
                                 "/script.js",
                                 "/chat.html",
