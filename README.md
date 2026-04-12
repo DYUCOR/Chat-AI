@@ -19,6 +19,7 @@ Descrição breve do que o projeto faz.
 - PostgreSQL
 - Docker
 - API Gemini
+- Firebase
 
 ## Instalação
 
